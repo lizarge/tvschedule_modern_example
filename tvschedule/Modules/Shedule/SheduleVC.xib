@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="21507" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SheduleVC" customModule="tvschedule" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="cvB-qh-b1V"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ok0-an-bsl">
+                    <rect key="frame" x="895" y="495" width="130" height="91"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <color key="textColor" red="0.98039215800000001" green="0.1843137443" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Pmt-tb-8Ig"/>
+            <constraints>
+                <constraint firstItem="Pmt-tb-8Ig" firstAttribute="trailing" secondItem="ok0-an-bsl" secondAttribute="trailing" constant="815" id="5f0-n6-On0"/>
+                <constraint firstItem="ok0-an-bsl" firstAttribute="top" secondItem="Pmt-tb-8Ig" secondAttribute="top" constant="435" id="RaX-w0-ppn"/>
+                <constraint firstItem="Pmt-tb-8Ig" firstAttribute="bottom" secondItem="ok0-an-bsl" secondAttribute="bottom" constant="434" id="a74-YZ-h4t"/>
+                <constraint firstItem="ok0-an-bsl" firstAttribute="leading" secondItem="Pmt-tb-8Ig" secondAttribute="leading" constant="815" id="pNz-Vz-erg"/>
+            </constraints>
+            <point key="canvasLocation" x="15" y="-98"/>
+        </view>
+    </objects>
+</document>

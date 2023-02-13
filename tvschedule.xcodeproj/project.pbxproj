@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D947331F299A524100B8D2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947331E299A524100B8D2CF /* AppDelegate.swift */; };
-		D9473324299A524100B8D2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9473322299A524100B8D2CF /* Main.storyboard */; };
 		D9473326299A524100B8D2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9473325299A524100B8D2CF /* Assets.xcassets */; };
 		D9473329299A524100B8D2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9473327299A524100B8D2CF /* LaunchScreen.storyboard */; };
 		D947334F299A55EF00B8D2CF /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947334E299A55EF00B8D2CF /* Channel.swift */; };
@@ -20,12 +19,18 @@
 		D9473361299A5C4F00B8D2CF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473360299A5C4F00B8D2CF /* API.swift */; };
 		D9473363299A5E0600B8D2CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473362299A5E0600B8D2CF /* ViewController.swift */; };
 		D9473369299A6D7800B8D2CF /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D9473368299A6D7800B8D2CF /* Swinject-Dynamic */; };
+		D9473371299A7D7200B8D2CF /* ShedulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947336B299A7D7200B8D2CF /* ShedulePresenter.swift */; };
+		D9473372299A7D7200B8D2CF /* SheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947336C299A7D7200B8D2CF /* SheduleRouter.swift */; };
+		D9473373299A7D7200B8D2CF /* SheduleContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947336D299A7D7200B8D2CF /* SheduleContracts.swift */; };
+		D9473374299A7D7200B8D2CF /* SheduleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947336E299A7D7200B8D2CF /* SheduleInteractor.swift */; };
+		D9473375299A7D7200B8D2CF /* SheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947336F299A7D7200B8D2CF /* SheduleVC.swift */; };
+		D9473376299A7D7200B8D2CF /* ShedulePageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473370299A7D7200B8D2CF /* ShedulePageBuilder.swift */; };
+		D947337B299A8FAB00B8D2CF /* SheduleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D947337A299A8FAB00B8D2CF /* SheduleVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D947331B299A524100B8D2CF /* tvschedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvschedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D947331E299A524100B8D2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9473323299A524100B8D2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9473325299A524100B8D2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9473328299A524100B8D2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D947334E299A55EF00B8D2CF /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
@@ -35,6 +40,13 @@
 		D947335C299A5B9B00B8D2CF /* ProgramItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramItem.swift; sourceTree = "<group>"; };
 		D9473360299A5C4F00B8D2CF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D9473362299A5E0600B8D2CF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = tvschedule/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		D947336B299A7D7200B8D2CF /* ShedulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShedulePresenter.swift; sourceTree = "<group>"; };
+		D947336C299A7D7200B8D2CF /* SheduleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleRouter.swift; sourceTree = "<group>"; };
+		D947336D299A7D7200B8D2CF /* SheduleContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleContracts.swift; sourceTree = "<group>"; };
+		D947336E299A7D7200B8D2CF /* SheduleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleInteractor.swift; sourceTree = "<group>"; };
+		D947336F299A7D7200B8D2CF /* SheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleVC.swift; sourceTree = "<group>"; };
+		D9473370299A7D7200B8D2CF /* ShedulePageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShedulePageBuilder.swift; sourceTree = "<group>"; };
+		D947337A299A8FAB00B8D2CF /* SheduleVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheduleVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +81,7 @@
 		D947331D299A524100B8D2CF /* tvschedule */ = {
 			isa = PBXGroup;
 			children = (
+				D947336A299A796100B8D2CF /* Modules */,
 				D947334C299A557C00B8D2CF /* Services */,
 				D947332F299A525300B8D2CF /* Resources */,
 				D9473330299A526700B8D2CF /* Global */,
@@ -81,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				D9473327299A524100B8D2CF /* LaunchScreen.storyboard */,
-				D9473322299A524100B8D2CF /* Main.storyboard */,
 				D9473325299A524100B8D2CF /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -122,6 +134,28 @@
 				D947335A299A5A1E00B8D2CF /* UIApplication.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D947336A299A796100B8D2CF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D9473377299A7D7700B8D2CF /* Shedule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D9473377299A7D7700B8D2CF /* Shedule */ = {
+			isa = PBXGroup;
+			children = (
+				D947336B299A7D7200B8D2CF /* ShedulePresenter.swift */,
+				D947336C299A7D7200B8D2CF /* SheduleRouter.swift */,
+				D947336D299A7D7200B8D2CF /* SheduleContracts.swift */,
+				D947336E299A7D7200B8D2CF /* SheduleInteractor.swift */,
+				D947336F299A7D7200B8D2CF /* SheduleVC.swift */,
+				D9473370299A7D7200B8D2CF /* ShedulePageBuilder.swift */,
+				D947337A299A8FAB00B8D2CF /* SheduleVC.xib */,
+			);
+			path = Shedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,8 +225,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9473329299A524100B8D2CF /* LaunchScreen.storyboard in Resources */,
+				D947337B299A8FAB00B8D2CF /* SheduleVC.xib in Resources */,
 				D9473326299A524100B8D2CF /* Assets.xcassets in Resources */,
-				D9473324299A524100B8D2CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,11 +238,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9473363299A5E0600B8D2CF /* ViewController.swift in Sources */,
+				D9473376299A7D7200B8D2CF /* ShedulePageBuilder.swift in Sources */,
+				D9473372299A7D7200B8D2CF /* SheduleRouter.swift in Sources */,
 				D947335D299A5B9B00B8D2CF /* ProgramItem.swift in Sources */,
 				D9473356299A587000B8D2CF /* DataRequest.swift in Sources */,
+				D9473371299A7D7200B8D2CF /* ShedulePresenter.swift in Sources */,
 				D947334F299A55EF00B8D2CF /* Channel.swift in Sources */,
+				D9473375299A7D7200B8D2CF /* SheduleVC.swift in Sources */,
 				D9473351299A576500B8D2CF /* APIBoy.swift in Sources */,
+				D9473374299A7D7200B8D2CF /* SheduleInteractor.swift in Sources */,
 				D947335B299A5A1E00B8D2CF /* UIApplication.swift in Sources */,
+				D9473373299A7D7200B8D2CF /* SheduleContracts.swift in Sources */,
 				D9473361299A5C4F00B8D2CF /* API.swift in Sources */,
 				D947331F299A524100B8D2CF /* AppDelegate.swift in Sources */,
 			);
@@ -217,14 +257,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D9473322299A524100B8D2CF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9473323299A524100B8D2CF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D9473327299A524100B8D2CF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -359,8 +391,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NKSA7HAL7S;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMainNibFile = "";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -384,8 +417,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NKSA7HAL7S;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMainNibFile = "";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

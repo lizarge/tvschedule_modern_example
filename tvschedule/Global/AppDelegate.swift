@@ -12,20 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    //TODO: Remove this, only for test
-    var apiBoy: APIBoy = APIBoy()
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        Task {
-            if let channelsList = await apiBoy.getChannels() {
-                print(channelsList.debugDescription)
-            }
-            if let programmItemsList = await apiBoy.getProgramItems() {
-                print(programmItemsList.debugDescription)
-            }
-        }
+        self.window?.rootViewController = ShedulePageBuilder.make()
         
         return true
     }
