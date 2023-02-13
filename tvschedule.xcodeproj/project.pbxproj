@@ -19,6 +19,7 @@
 		D947335D299A5B9B00B8D2CF /* ProgramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947335C299A5B9B00B8D2CF /* ProgramItem.swift */; };
 		D9473361299A5C4F00B8D2CF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473360299A5C4F00B8D2CF /* API.swift */; };
 		D9473363299A5E0600B8D2CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473362299A5E0600B8D2CF /* ViewController.swift */; };
+		D9473369299A6D7800B8D2CF /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D9473368299A6D7800B8D2CF /* Swinject-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9473354299A57B700B8D2CF /* Alamofire in Frameworks */,
+				D9473369299A6D7800B8D2CF /* Swinject-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,8 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				D947334C299A557C00B8D2CF /* Services */,
-				D9473330299A526700B8D2CF /* Global */,
 				D947332F299A525300B8D2CF /* Resources */,
+				D9473330299A526700B8D2CF /* Global */,
 				D9473357299A593A00B8D2CF /* Extensions */,
 			);
 			path = tvschedule;
@@ -140,6 +142,7 @@
 			name = tvschedule;
 			packageProductDependencies = (
 				D9473353299A57B700B8D2CF /* Alamofire */,
+				D9473368299A6D7800B8D2CF /* Swinject-Dynamic */,
 			);
 			productName = tvschedule;
 			productReference = D947331B299A524100B8D2CF /* tvschedule.app */;
@@ -171,6 +174,7 @@
 			mainGroup = D9473312299A524100B8D2CF;
 			packageReferences = (
 				D9473352299A57B700B8D2CF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D9473367299A6D7800B8D2CF /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = D947331C299A524100B8D2CF /* Products */;
 			projectDirPath = "";
@@ -428,6 +432,14 @@
 				kind = branch;
 			};
 		};
+		D9473367299A6D7800B8D2CF /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -435,6 +447,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D9473352299A57B700B8D2CF /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		D9473368299A6D7800B8D2CF /* Swinject-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D9473367299A6D7800B8D2CF /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = "Swinject-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
