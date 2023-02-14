@@ -7,20 +7,24 @@
 
 import UIKit
 
-class SheduleVC: UIViewController, SheduleViewProtocol {
+class SheduleVC: UIViewController {
     
     //MARK: VIPER
     let presenter: ShedulePresenterProtocol
     
     //MARK: Xib UI
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+    var collectionView: UICollectionView!
+    var scrollView: UIScrollView!
     //MARK: Data
+    @IBOutlet weak var collectionViewWidthContrains: NSLayoutConstraint!
+    
     private var currentProgramm:DailyProgram?
     typealias DataSource = UICollectionViewDiffableDataSource<DailyProgram.Section, ProgramItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<DailyProgram.Section, ProgramItem>
     
     private lazy var dataSource = makeDataSource()
+    
+    //MARK: VC lifecycle
     
     init(presenter: ShedulePresenterProtocol) {
         self.presenter = presenter
@@ -34,27 +38,35 @@ class SheduleVC: UIViewController, SheduleViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        
         self.presenter.updateProgramShedule()
     }
     
     fileprivate func setUI() {
-        constructUI()
-    }
-    
-    func handle(_ output: ShedulePresenterOutputs) {
-        switch output {
-        case .showData(let dailyProgramm):
-            self.currentProgramm = dailyProgramm
-            DispatchQueue.main.async {
-                self.applySnapshot(animatingDifferences: true)
-            }
-        case .showError(let error):
-            self.error(text: error.localizedDescription)
+        
+        self.scrollView = UIScrollView()
+        self.view.addSubview(self.scrollView)
+        self.scrollView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+      
+        let extendedFrame = CGRect(x: 0, y: 0, width: UIDemoConstants.sheduleWidth , height: self.view.frame.height)
+        self.collectionView = UICollectionView(frame: extendedFrame, collectionViewLayout: UICollectionViewFlowLayout())
+        self.collectionView.delegate = self
+        self.scrollView.addSubview(self.collectionView)
+        self.scrollView.contentSize = extendedFrame.size
+        
+        [ChannelCell.self, HeaderCell.self, ProgramCell.self].forEach { type in
+            self.collectionView.register(
+                UINib(nibName: type.stringClassID, bundle: .main), forCellWithReuseIdentifier: type.stringClassID)
         }
     }
     
-    //TODO: delegate this to spectial class
+    //MARK: collection diffable data source
+    //TODO: move this to spectial class
     func makeDataSource() -> DataSource {
         let dataSource = DataSource(
         collectionView: collectionView,
@@ -69,6 +81,7 @@ class SheduleVC: UIViewController, SheduleViewProtocol {
             
           return cell
         })
+        
         return dataSource
     }
  
@@ -86,14 +99,29 @@ class SheduleVC: UIViewController, SheduleViewProtocol {
     
 }
 
-extension SheduleVC: CodeGeneratedUIProtocol {
-    func constructUI() {
-        collectionView.register(
-            UINib(nibName: ChannelCell.stringClassID, bundle: .main), forCellWithReuseIdentifier: ChannelCell.stringClassID)
-        collectionView.register(
-            UINib(nibName: HeaderCell.stringClassID, bundle: .main), forCellWithReuseIdentifier: HeaderCell.stringClassID)
-        collectionView.register(
-            UINib(nibName: ProgramCell.stringClassID, bundle: .main), forCellWithReuseIdentifier: ProgramCell.stringClassID)
+extension SheduleVC:SheduleViewProtocol {
+    func handle(_ output: ShedulePresenterOutputs) {
+        switch output {
+        case .showData(let dailyProgramm):
+            self.currentProgramm = dailyProgramm
+            self.applySnapshot(animatingDifferences: true)
+        case .showError(let error):
+            self.error(text: error.localizedDescription)
+        }
     }
 }
 
+
+extension SheduleVC: UICollectionViewDelegateFlowLayout{
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      return CGSize(width: 300, height: 100)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 0.0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return 0.0
+  }
+}

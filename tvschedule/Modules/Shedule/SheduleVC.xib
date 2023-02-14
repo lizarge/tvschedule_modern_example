@@ -4,13 +4,11 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SheduleVC" customModule="tvschedule" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="RSP-oB-bxY" id="mHc-Ct-T2J"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cvB-qh-b1V"/>
             </connections>
         </placeholder>
@@ -18,35 +16,7 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RSP-oB-bxY">
-                    <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="35D-ae-NRa">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                    <cells>
-                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rNT-iZ-ogh">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="bFN-Rl-JWu">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </collectionViewCellContentView>
-                        </collectionViewCell>
-                    </cells>
-                </collectionView>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="Pmt-tb-8Ig"/>
-            <constraints>
-                <constraint firstItem="RSP-oB-bxY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9CD-t4-l1z"/>
-                <constraint firstItem="RSP-oB-bxY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Sr5-IX-o7i"/>
-                <constraint firstAttribute="trailing" secondItem="RSP-oB-bxY" secondAttribute="trailing" id="d8d-ZE-VLb"/>
-                <constraint firstAttribute="bottom" secondItem="RSP-oB-bxY" secondAttribute="bottom" id="u2y-2G-Af6"/>
-            </constraints>
             <point key="canvasLocation" x="15" y="-98"/>
         </view>
     </objects>

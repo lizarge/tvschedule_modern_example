@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D9343C54299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C53299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift */; };
 		D9343C58299BAE5000489ED1 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C56299BAE5000489ED1 /* ChannelCell.swift */; };
 		D9343C59299BAE5000489ED1 /* ChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9343C57299BAE5000489ED1 /* ChannelCell.xib */; };
 		D9343C5C299BAEDB00489ED1 /* ProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C5A299BAEDB00489ED1 /* ProgramCell.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D9343C53299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratedUIProtocol.swift; sourceTree = "<group>"; };
 		D9343C56299BAE5000489ED1 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		D9343C57299BAE5000489ED1 /* ChannelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCell.xib; sourceTree = "<group>"; };
 		D9343C5A299BAEDB00489ED1 /* ProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCell.swift; sourceTree = "<group>"; };
@@ -82,14 +80,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D9343C52299BAC1200489ED1 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				D9343C53299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		D9343C55299BAE2800489ED1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				D947331E299A524100B8D2CF /* AppDelegate.swift */,
-				D9473380299A9D9100B8D2CF /* Customs */,
 				D9473357299A593A00B8D2CF /* Extensions */,
 			);
 			path = Global;
@@ -200,6 +189,7 @@
 		D9473377299A7D7700B8D2CF /* Shedule */ = {
 			isa = PBXGroup;
 			children = (
+				D9343C55299BAE2800489ED1 /* Cells */,
 				D947336B299A7D7200B8D2CF /* ShedulePresenter.swift */,
 				D947336C299A7D7200B8D2CF /* SheduleRouter.swift */,
 				D947336D299A7D7200B8D2CF /* SheduleContracts.swift */,
@@ -209,15 +199,6 @@
 				D947337A299A8FAB00B8D2CF /* SheduleVC.xib */,
 			);
 			path = Shedule;
-			sourceTree = "<group>";
-		};
-		D9473380299A9D9100B8D2CF /* Customs */ = {
-			isa = PBXGroup;
-			children = (
-				D9343C55299BAE2800489ED1 /* Cells */,
-				D9343C52299BAC1200489ED1 /* Protocols */,
-			);
-			path = Customs;
 			sourceTree = "<group>";
 		};
 		D947338A299AE61E00B8D2CF /* Models */ = {
@@ -324,7 +305,6 @@
 				D9473384299ABD7D00B8D2CF /* DependencyInjector.swift in Sources */,
 				D9473351299A576500B8D2CF /* APIBoy.swift in Sources */,
 				D9473374299A7D7200B8D2CF /* SheduleInteractor.swift in Sources */,
-				D9343C54299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift in Sources */,
 				D947335B299A5A1E00B8D2CF /* UIApplication.swift in Sources */,
 				D9343C63299BD01300489ED1 /* NSObject.swift in Sources */,
 				D9343C60299BAEEF00489ED1 /* HeaderCell.swift in Sources */,
