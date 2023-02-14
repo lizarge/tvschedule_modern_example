@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SheduleVC" customModule="tvschedule" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="RSP-oB-bxY" id="mHc-Ct-T2J"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cvB-qh-b1V"/>
             </connections>
         </placeholder>
@@ -17,19 +18,27 @@
             <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ok0-an-bsl">
-                    <rect key="frame" x="687" y="495" width="623" height="91"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                    <color key="textColor" red="0.98039215800000001" green="0.1843137443" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RSP-oB-bxY">
+                    <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="el2-i7-yOa">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="0eo-ry-T0W"/>
+                        <outlet property="delegate" destination="-1" id="qFL-Ht-p0y"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Pmt-tb-8Ig"/>
             <constraints>
-                <constraint firstItem="Pmt-tb-8Ig" firstAttribute="trailing" secondItem="ok0-an-bsl" secondAttribute="trailing" constant="530" id="5f0-n6-On0"/>
-                <constraint firstItem="ok0-an-bsl" firstAttribute="top" secondItem="Pmt-tb-8Ig" secondAttribute="top" constant="435" id="RaX-w0-ppn"/>
-                <constraint firstItem="Pmt-tb-8Ig" firstAttribute="bottom" secondItem="ok0-an-bsl" secondAttribute="bottom" constant="434" id="a74-YZ-h4t"/>
-                <constraint firstItem="ok0-an-bsl" firstAttribute="leading" secondItem="Pmt-tb-8Ig" secondAttribute="leading" constant="607" id="pNz-Vz-erg"/>
+                <constraint firstItem="RSP-oB-bxY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9CD-t4-l1z"/>
+                <constraint firstItem="RSP-oB-bxY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Sr5-IX-o7i"/>
+                <constraint firstAttribute="trailing" secondItem="RSP-oB-bxY" secondAttribute="trailing" id="d8d-ZE-VLb"/>
+                <constraint firstAttribute="bottom" secondItem="RSP-oB-bxY" secondAttribute="bottom" id="u2y-2G-Af6"/>
             </constraints>
             <point key="canvasLocation" x="15" y="-98"/>
         </view>

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9343C54299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C53299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift */; };
+		D9343C58299BAE5000489ED1 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C56299BAE5000489ED1 /* ChannelCell.swift */; };
+		D9343C59299BAE5000489ED1 /* ChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9343C57299BAE5000489ED1 /* ChannelCell.xib */; };
+		D9343C5C299BAEDB00489ED1 /* ProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C5A299BAEDB00489ED1 /* ProgramCell.swift */; };
+		D9343C5D299BAEDB00489ED1 /* ProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9343C5B299BAEDB00489ED1 /* ProgramCell.xib */; };
+		D9343C60299BAEEF00489ED1 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C5E299BAEEF00489ED1 /* HeaderCell.swift */; };
+		D9343C61299BAEEF00489ED1 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9343C5F299BAEEF00489ED1 /* HeaderCell.xib */; };
 		D947331F299A524100B8D2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947331E299A524100B8D2CF /* AppDelegate.swift */; };
 		D9473326299A524100B8D2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9473325299A524100B8D2CF /* Assets.xcassets */; };
 		D9473329299A524100B8D2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9473327299A524100B8D2CF /* LaunchScreen.storyboard */; };
@@ -31,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9343C53299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratedUIProtocol.swift; sourceTree = "<group>"; };
+		D9343C56299BAE5000489ED1 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		D9343C57299BAE5000489ED1 /* ChannelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCell.xib; sourceTree = "<group>"; };
+		D9343C5A299BAEDB00489ED1 /* ProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCell.swift; sourceTree = "<group>"; };
+		D9343C5B299BAEDB00489ED1 /* ProgramCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgramCell.xib; sourceTree = "<group>"; };
+		D9343C5E299BAEEF00489ED1 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		D9343C5F299BAEEF00489ED1 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		D947331B299A524100B8D2CF /* tvschedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvschedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D947331E299A524100B8D2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9473325299A524100B8D2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +80,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9343C52299BAC1200489ED1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D9343C53299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D9343C55299BAE2800489ED1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D9343C56299BAE5000489ED1 /* ChannelCell.swift */,
+				D9343C57299BAE5000489ED1 /* ChannelCell.xib */,
+				D9343C5A299BAEDB00489ED1 /* ProgramCell.swift */,
+				D9343C5B299BAEDB00489ED1 /* ProgramCell.xib */,
+				D9343C5E299BAEEF00489ED1 /* HeaderCell.swift */,
+				D9343C5F299BAEEF00489ED1 /* HeaderCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D9473312299A524100B8D2CF = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +203,8 @@
 		D9473380299A9D9100B8D2CF /* Customs */ = {
 			isa = PBXGroup;
 			children = (
+				D9343C55299BAE2800489ED1 /* Cells */,
+				D9343C52299BAC1200489ED1 /* Protocols */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -246,8 +283,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9343C5D299BAEDB00489ED1 /* ProgramCell.xib in Resources */,
 				D9473329299A524100B8D2CF /* LaunchScreen.storyboard in Resources */,
+				D9343C59299BAE5000489ED1 /* ChannelCell.xib in Resources */,
 				D947337B299A8FAB00B8D2CF /* SheduleVC.xib in Resources */,
+				D9343C61299BAEEF00489ED1 /* HeaderCell.xib in Resources */,
 				D9473326299A524100B8D2CF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9473389299AE16B00B8D2CF /* TVProgramHolder.swift in Sources */,
+				D9343C58299BAE5000489ED1 /* ChannelCell.swift in Sources */,
 				D9473376299A7D7200B8D2CF /* ShedulePageBuilder.swift in Sources */,
 				D9473372299A7D7200B8D2CF /* SheduleRouter.swift in Sources */,
 				D947335D299A5B9B00B8D2CF /* ProgramItem.swift in Sources */,
@@ -267,11 +308,14 @@
 				D947337F299A9B9E00B8D2CF /* ViewController.swift in Sources */,
 				D9473371299A7D7200B8D2CF /* ShedulePresenter.swift in Sources */,
 				D947334F299A55EF00B8D2CF /* Channel.swift in Sources */,
+				D9343C5C299BAEDB00489ED1 /* ProgramCell.swift in Sources */,
 				D9473375299A7D7200B8D2CF /* SheduleVC.swift in Sources */,
 				D9473384299ABD7D00B8D2CF /* DI.swift in Sources */,
 				D9473351299A576500B8D2CF /* APIBoy.swift in Sources */,
 				D9473374299A7D7200B8D2CF /* SheduleInteractor.swift in Sources */,
+				D9343C54299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift in Sources */,
 				D947335B299A5A1E00B8D2CF /* UIApplication.swift in Sources */,
+				D9343C60299BAEEF00489ED1 /* HeaderCell.swift in Sources */,
 				D9473373299A7D7200B8D2CF /* SheduleContracts.swift in Sources */,
 				D9473361299A5C4F00B8D2CF /* Api.swift in Sources */,
 				D947331F299A524100B8D2CF /* AppDelegate.swift in Sources */,

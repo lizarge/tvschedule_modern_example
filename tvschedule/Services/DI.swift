@@ -30,6 +30,20 @@ final class DI {
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             return decoder
         }
+        
+        container.register(DateFormatter.self,name: DateFormatterStyles.time.rawValue) { resolver in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .none
+            dateFormatter.timeStyle = .short
+            return dateFormatter
+        }
+        
+        container.register(DateFormatter.self,name: DateFormatterStyles.fullToday.rawValue) { resolver in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .none
+            dateFormatter.timeStyle = .short
+            return dateFormatter
+        }
     }
     
     private static func setupViews(){
@@ -38,4 +52,8 @@ final class DI {
         }
     }
     
+    enum DateFormatterStyles:String {
+        case time
+        case fullToday
+    }
 }

@@ -7,9 +7,15 @@
 
 import UIKit
 
-class SheduleVC: UIViewController {
+class SheduleVC: UIViewController, SheduleViewProtocol {
+    
+    //MARK: VIPER
     let presenter: ShedulePresenterProtocol
     
+    //MARK: Xib UI
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    //MARK: Data
     var currentProgramm:DailyProgram? {
         didSet {
             //TODO: Reload data
@@ -33,11 +39,9 @@ class SheduleVC: UIViewController {
     }
     
     fileprivate func setUI() {
-        
+        constructUI()
     }
-}
-
-extension SheduleVC:SheduleViewProtocol {
+    
     func handle(_ output: ShedulePresenterOutputs) {
         switch output {
         case .showData(let dailyProgramm):
@@ -46,13 +50,12 @@ extension SheduleVC:SheduleViewProtocol {
             self.error(text: error.localizedDescription)
         }
     }
+    
 }
 
-//TODO: temporaty stuff
-
-enum Section {
-  case main
+extension SheduleVC: CodeGeneratedUIProtocol {
+    func constructUI() {
+        
+    }
 }
-
-typealias DataSource = UICollectionViewDiffableDataSource<Section, Channel>
 

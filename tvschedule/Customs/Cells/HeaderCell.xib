@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="21507" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="Rz2-K0-ksD" customClass="HeaderCell" customModule="tvschedule" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="444" height="211"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="444" height="211"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGw-OY-BRP">
+                        <rect key="frame" x="20" y="20" width="382" height="151"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPC-c9-JTh">
+                        <rect key="frame" x="422" y="25" width="18" height="182"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="18" id="wDW-oe-4zy"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tae-N3-590">
+                        <rect key="frame" x="4" y="189" width="436" height="18"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="0QU-eJ-9gP"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="7PP-Ag-gPX"/>
+            <constraints>
+                <constraint firstItem="VPC-c9-JTh" firstAttribute="leading" secondItem="UGw-OY-BRP" secondAttribute="trailing" constant="20" id="0Q5-ce-nMK"/>
+                <constraint firstItem="UGw-OY-BRP" firstAttribute="top" secondItem="Rz2-K0-ksD" secondAttribute="top" constant="20" id="9qp-d0-Pdw"/>
+                <constraint firstItem="VPC-c9-JTh" firstAttribute="top" secondItem="Rz2-K0-ksD" secondAttribute="top" constant="25" id="LL1-3D-3xW"/>
+                <constraint firstAttribute="trailing" secondItem="VPC-c9-JTh" secondAttribute="trailing" constant="4" id="TfJ-GP-Xd3"/>
+                <constraint firstAttribute="trailing" secondItem="Tae-N3-590" secondAttribute="trailing" constant="4" id="X0l-bS-D6y"/>
+                <constraint firstItem="UGw-OY-BRP" firstAttribute="leading" secondItem="Rz2-K0-ksD" secondAttribute="leading" constant="20" id="fVP-33-Zjh"/>
+                <constraint firstItem="Tae-N3-590" firstAttribute="top" secondItem="UGw-OY-BRP" secondAttribute="bottom" constant="18" id="h2y-iR-iRs"/>
+                <constraint firstAttribute="bottom" secondItem="Tae-N3-590" secondAttribute="bottom" constant="4" id="lFS-QG-o4t"/>
+                <constraint firstAttribute="bottom" secondItem="VPC-c9-JTh" secondAttribute="bottom" constant="4" id="qRo-0y-798"/>
+                <constraint firstItem="Tae-N3-590" firstAttribute="leading" secondItem="Rz2-K0-ksD" secondAttribute="leading" constant="4" id="w22-Bo-DL5"/>
+            </constraints>
+            <size key="customSize" width="444" height="211"/>
+            <connections>
+                <outlet property="headerTimeLabel" destination="UGw-OY-BRP" id="T5X-Tj-f1Y"/>
+            </connections>
+            <point key="canvasLocation" x="382" y="44.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
