@@ -11,8 +11,8 @@ import Foundation
 
 class DailyProgram {
     
-    public let storage:[Int:[ProgramItem]]
-    public let sortedChannels:[Channel]
+    private let storage:[Int:[ProgramItem]]
+    private let sortedChannels:[Channel]
     
     private let sheduleStartTime:Date
     private let sheduleEndTime:Date
@@ -53,9 +53,31 @@ class DailyProgram {
         storage = tempStorage
     }
     
+    func sections()->[DailyProgram.Section] {
+        return self.sortedChannels.map { channel in
+            return DailyProgram.Section.main(channel)
+        }
+    }
+    
+    func items(section:Section)->[ProgramItem]{
+        
+        var items = [ProgramItem]()
+        
+        switch section {
+            case .main(let channel):
+                items = self.storage[channel.id] ?? []
+        }
+        
+        return items
+    }
+    
     struct HeaderTimeShedule {
         let date:Date
         let isFull:Bool
+    }
+    
+    enum Section:Hashable {
+      case main(Channel)
     }
 
 }

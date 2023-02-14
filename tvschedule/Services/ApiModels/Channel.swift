@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Channel:Codable, Hashable {
+struct Channel:Codable, Hashable, Equatable {
     let id:Int
     let orderNum:Int
     let accessNum:Int

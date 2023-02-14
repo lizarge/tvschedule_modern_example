@@ -7,7 +7,16 @@
 
 import Foundation
 
-struct ProgramItem:Codable {
+struct ProgramItem:Codable, Hashable, Equatable {
+    
+    static func == (lhs: ProgramItem, rhs: ProgramItem) -> Bool {
+        lhs.recentAirTime.id == rhs.recentAirTime.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.recentAirTime.id)
+    }
+
     
     struct RecentAirTime:Codable {
         let id:Int

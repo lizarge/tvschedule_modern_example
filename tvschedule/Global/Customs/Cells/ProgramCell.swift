@@ -10,8 +10,9 @@ import UIKit
 class ProgramCell: UICollectionViewCell {
     
     var program:ProgramItem?
+    
     lazy var dateFormatter = {
-        return DI.container.resolve(DateFormatter.self, name: DI.DateFormatterStyles.time.rawValue)!
+        return DependencyInjector.container.resolve(DateFormatter.self, name: DependencyInjector.DateFormatterStyles.time.rawValue)!
     }()
     
     @IBOutlet weak var programNameLabel: UILabel!

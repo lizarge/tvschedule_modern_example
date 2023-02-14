@@ -11,11 +11,11 @@ class HeaderCell: UICollectionViewCell {
     @IBOutlet weak var headerTimeLabel: UILabel!
     
     lazy var timeFormatterShort = {
-        return DI.container.resolve(DateFormatter.self, name: DI.DateFormatterStyles.time.rawValue)!
+        return DependencyInjector.container.resolve(DateFormatter.self, name: DependencyInjector.DateFormatterStyles.time.rawValue)!
     }()
     
     lazy var dateFormatter = {
-        return DI.container.resolve(DateFormatter.self, name: DI.DateFormatterStyles.fullToday.rawValue)!
+        return DependencyInjector.container.resolve(DateFormatter.self, name: DependencyInjector.DateFormatterStyles.fullToday.rawValue)!
     }()
     
     func setup(headerTime:DailyProgram.HeaderTimeShedule) {

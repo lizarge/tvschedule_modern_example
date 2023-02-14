@@ -9,7 +9,7 @@ import Foundation
 import Swinject
 import UIKit
 
-final class DI {
+final class DependencyInjector {
     static public let container = Container()
     
     static func BuldDependecy() {

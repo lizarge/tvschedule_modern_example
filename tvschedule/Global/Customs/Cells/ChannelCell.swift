@@ -8,6 +8,7 @@
 import UIKit
 
 class ChannelCell: UICollectionViewCell {
+    
     @IBOutlet weak var channelNumberLabel: UILabel!
     @IBOutlet weak var channelNameLabel: UILabel!
     

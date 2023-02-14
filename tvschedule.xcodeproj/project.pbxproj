@@ -14,6 +14,7 @@
 		D9343C5D299BAEDB00489ED1 /* ProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9343C5B299BAEDB00489ED1 /* ProgramCell.xib */; };
 		D9343C60299BAEEF00489ED1 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C5E299BAEEF00489ED1 /* HeaderCell.swift */; };
 		D9343C61299BAEEF00489ED1 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9343C5F299BAEEF00489ED1 /* HeaderCell.xib */; };
+		D9343C63299BD01300489ED1 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C62299BD01300489ED1 /* NSObject.swift */; };
 		D947331F299A524100B8D2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947331E299A524100B8D2CF /* AppDelegate.swift */; };
 		D9473326299A524100B8D2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9473325299A524100B8D2CF /* Assets.xcassets */; };
 		D9473329299A524100B8D2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9473327299A524100B8D2CF /* LaunchScreen.storyboard */; };
@@ -23,7 +24,7 @@
 		D9473356299A587000B8D2CF /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473355299A587000B8D2CF /* DataRequest.swift */; };
 		D947335B299A5A1E00B8D2CF /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947335A299A5A1E00B8D2CF /* UIApplication.swift */; };
 		D947335D299A5B9B00B8D2CF /* ProgramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947335C299A5B9B00B8D2CF /* ProgramItem.swift */; };
-		D9473361299A5C4F00B8D2CF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473360299A5C4F00B8D2CF /* Api.swift */; };
+		D9473361299A5C4F00B8D2CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473360299A5C4F00B8D2CF /* Constants.swift */; };
 		D9473371299A7D7200B8D2CF /* ShedulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947336B299A7D7200B8D2CF /* ShedulePresenter.swift */; };
 		D9473372299A7D7200B8D2CF /* SheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947336C299A7D7200B8D2CF /* SheduleRouter.swift */; };
 		D9473373299A7D7200B8D2CF /* SheduleContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947336D299A7D7200B8D2CF /* SheduleContracts.swift */; };
@@ -32,9 +33,9 @@
 		D9473376299A7D7200B8D2CF /* ShedulePageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473370299A7D7200B8D2CF /* ShedulePageBuilder.swift */; };
 		D947337B299A8FAB00B8D2CF /* SheduleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D947337A299A8FAB00B8D2CF /* SheduleVC.xib */; };
 		D947337F299A9B9E00B8D2CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947337E299A9B9E00B8D2CF /* ViewController.swift */; };
-		D9473384299ABD7D00B8D2CF /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473383299ABD7D00B8D2CF /* DI.swift */; };
+		D9473384299ABD7D00B8D2CF /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473383299ABD7D00B8D2CF /* DependencyInjector.swift */; };
 		D9473387299AC0B800B8D2CF /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = D9473386299AC0B800B8D2CF /* Swinject */; };
-		D9473389299AE16B00B8D2CF /* TVProgramHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473388299AE16B00B8D2CF /* TVProgramHolder.swift */; };
+		D9473389299AE16B00B8D2CF /* DailyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473388299AE16B00B8D2CF /* DailyProgram.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		D9343C5B299BAEDB00489ED1 /* ProgramCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgramCell.xib; sourceTree = "<group>"; };
 		D9343C5E299BAEEF00489ED1 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		D9343C5F299BAEEF00489ED1 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		D9343C62299BD01300489ED1 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		D947331B299A524100B8D2CF /* tvschedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvschedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D947331E299A524100B8D2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9473325299A524100B8D2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 		D9473355299A587000B8D2CF /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		D947335A299A5A1E00B8D2CF /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		D947335C299A5B9B00B8D2CF /* ProgramItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramItem.swift; sourceTree = "<group>"; };
-		D9473360299A5C4F00B8D2CF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		D9473360299A5C4F00B8D2CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D947336B299A7D7200B8D2CF /* ShedulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShedulePresenter.swift; sourceTree = "<group>"; };
 		D947336C299A7D7200B8D2CF /* SheduleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleRouter.swift; sourceTree = "<group>"; };
 		D947336D299A7D7200B8D2CF /* SheduleContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleContracts.swift; sourceTree = "<group>"; };
@@ -63,8 +65,8 @@
 		D9473370299A7D7200B8D2CF /* ShedulePageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShedulePageBuilder.swift; sourceTree = "<group>"; };
 		D947337A299A8FAB00B8D2CF /* SheduleVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheduleVC.xib; sourceTree = "<group>"; };
 		D947337E299A9B9E00B8D2CF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D9473383299ABD7D00B8D2CF /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
-		D9473388299AE16B00B8D2CF /* TVProgramHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVProgramHolder.swift; sourceTree = "<group>"; };
+		D9473383299ABD7D00B8D2CF /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		D9473388299AE16B00B8D2CF /* DailyProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyProgram.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		D9343C64299BD69300489ED1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D9473355299A587000B8D2CF /* DataRequest.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D9473312299A524100B8D2CF = {
 			isa = PBXGroup;
 			children = (
@@ -120,13 +130,11 @@
 		D947331D299A524100B8D2CF /* tvschedule */ = {
 			isa = PBXGroup;
 			children = (
+				D9473330299A526700B8D2CF /* Global */,
 				D947336A299A796100B8D2CF /* Modules */,
 				D947334C299A557C00B8D2CF /* Services */,
 				D947338A299AE61E00B8D2CF /* Models */,
 				D947332F299A525300B8D2CF /* Resources */,
-				D9473330299A526700B8D2CF /* Global */,
-				D9473357299A593A00B8D2CF /* Extensions */,
-				D9473380299A9D9100B8D2CF /* Customs */,
 			);
 			path = tvschedule;
 			sourceTree = "<group>";
@@ -144,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				D947331E299A524100B8D2CF /* AppDelegate.swift */,
+				D9473380299A9D9100B8D2CF /* Customs */,
+				D9473357299A593A00B8D2CF /* Extensions */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -151,10 +161,10 @@
 		D947334C299A557C00B8D2CF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D9473383299ABD7D00B8D2CF /* DI.swift */,
-				D9473355299A587000B8D2CF /* DataRequest.swift */,
+				D9473383299ABD7D00B8D2CF /* DependencyInjector.swift */,
 				D9473350299A576500B8D2CF /* APIBoy.swift */,
-				D9473360299A5C4F00B8D2CF /* Api.swift */,
+				D9473360299A5C4F00B8D2CF /* Constants.swift */,
+				D9343C64299BD69300489ED1 /* Extension */,
 				D947334D299A559500B8D2CF /* ApiModels */,
 			);
 			path = Services;
@@ -174,6 +184,7 @@
 			children = (
 				D947337E299A9B9E00B8D2CF /* ViewController.swift */,
 				D947335A299A5A1E00B8D2CF /* UIApplication.swift */,
+				D9343C62299BD01300489ED1 /* NSObject.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,7 +223,7 @@
 		D947338A299AE61E00B8D2CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D9473388299AE16B00B8D2CF /* TVProgramHolder.swift */,
+				D9473388299AE16B00B8D2CF /* DailyProgram.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,7 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9473389299AE16B00B8D2CF /* TVProgramHolder.swift in Sources */,
+				D9473389299AE16B00B8D2CF /* DailyProgram.swift in Sources */,
 				D9343C58299BAE5000489ED1 /* ChannelCell.swift in Sources */,
 				D9473376299A7D7200B8D2CF /* ShedulePageBuilder.swift in Sources */,
 				D9473372299A7D7200B8D2CF /* SheduleRouter.swift in Sources */,
@@ -310,14 +321,15 @@
 				D947334F299A55EF00B8D2CF /* Channel.swift in Sources */,
 				D9343C5C299BAEDB00489ED1 /* ProgramCell.swift in Sources */,
 				D9473375299A7D7200B8D2CF /* SheduleVC.swift in Sources */,
-				D9473384299ABD7D00B8D2CF /* DI.swift in Sources */,
+				D9473384299ABD7D00B8D2CF /* DependencyInjector.swift in Sources */,
 				D9473351299A576500B8D2CF /* APIBoy.swift in Sources */,
 				D9473374299A7D7200B8D2CF /* SheduleInteractor.swift in Sources */,
 				D9343C54299BAC3400489ED1 /* CodeGeneratedUIProtocol.swift in Sources */,
 				D947335B299A5A1E00B8D2CF /* UIApplication.swift in Sources */,
+				D9343C63299BD01300489ED1 /* NSObject.swift in Sources */,
 				D9343C60299BAEEF00489ED1 /* HeaderCell.swift in Sources */,
 				D9473373299A7D7200B8D2CF /* SheduleContracts.swift in Sources */,
-				D9473361299A5C4F00B8D2CF /* Api.swift in Sources */,
+				D9473361299A5C4F00B8D2CF /* Constants.swift in Sources */,
 				D947331F299A524100B8D2CF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

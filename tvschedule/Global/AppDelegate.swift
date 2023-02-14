@@ -15,9 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        DI.BuldDependecy()
+        DependencyInjector.BuldDependecy()
         
-        let newRoot =  DI.container.resolve(SheduleVC.self)
+        let newRoot =  DependencyInjector.container.resolve(SheduleVC.self)
         self.window?.rootViewController = newRoot
         
         return true

@@ -22,7 +22,7 @@ public extension DataRequest {
 
         return try await withCheckedThrowingContinuation({ continuation in
 
-            let decoder = DI.container.resolve(JSONDecoder.self)!
+            let decoder = DependencyInjector.container.resolve(JSONDecoder.self)!
             
             self.responseDecodable(of: type, queue: queue, dataPreprocessor: dataPreprocessor, decoder: decoder, emptyResponseCodes: emptyResponseCodes, emptyRequestMethods: emptyRequestMethods) { response in
            
