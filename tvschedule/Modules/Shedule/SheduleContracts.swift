@@ -6,34 +6,34 @@
 //
 
 //PRESENTER
-protocol ShedulePresenterProtocol: class  {
-    
+protocol ShedulePresenterProtocol: AnyObject  {
+    func updateProgramShedule()
 }
 
 enum ShedulePresenterOutputs {
-    case showError(String)
-    case showData
+    case showError(Error)
+    case showData(DailyProgram)
 }
 
 /*------------------------*/
 //INTERACTOR
-protocol SheduleInteractorProtocol: class  {
+protocol SheduleInteractorProtocol: AnyObject  {
     var delegate: SheduleInteractorDelegate! {get set}
+    func fetchProgram()
 }
 
-protocol SheduleInteractorDelegate: class  {
+protocol SheduleInteractorDelegate: AnyObject  {
     func handle(_ output: SheduleInteractorOutputs)
 }
 
 enum SheduleInteractorOutputs {
-    case sendError(String)
-    case sendData
+    case sendError(Error)
+    case showData([Channel],[ProgramItem])
 }
-
 
 /*------------------------*/
 //ROUTER
-protocol SheduleRouterProtocol: class {
+protocol SheduleRouterProtocol: AnyObject {
     var view: SheduleViewProtocol? { get set }
     func navigate(_ route: SheduleRoutes)
 }
@@ -45,7 +45,7 @@ enum SheduleRoutes {
 /*------------------------*/
 //VIEW
 
-protocol SheduleViewProtocol: class {
+protocol SheduleViewProtocol: AnyObject {
     func handle(_ output: ShedulePresenterOutputs)
 }
 

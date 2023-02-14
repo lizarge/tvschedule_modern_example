@@ -17,10 +17,24 @@ final class ShedulePresenter: ShedulePresenterProtocol {
         
         interactor.delegate = self
     }
+    
+    func updateProgramShedule() {
+        self.interactor.fetchProgram()
+    }
 }
 
 extension ShedulePresenter: SheduleInteractorDelegate {
+    
+    //TODO: look i need move data logic from Presenter to hmmm
+    
     func handle(_ output: SheduleInteractorOutputs) {
+        
+        switch output {
+        case .showData(let channels, let programItems):
+            self.view?.handle(.showData( DailyProgram(channels: channels, items: programItems) ))
+        case .sendError(let error):
+            self.view?.handle(.showError(error))
+        }
         
     }
 }

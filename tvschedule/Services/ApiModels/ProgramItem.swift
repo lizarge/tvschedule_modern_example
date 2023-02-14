@@ -11,6 +11,7 @@ struct ProgramItem:Codable {
     
     struct RecentAirTime:Codable {
         let id:Int
+        let channelID:Int
     }
     
     let startTime:Date

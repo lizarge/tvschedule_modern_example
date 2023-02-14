@@ -7,8 +7,14 @@
 
 import UIKit
 
-class SheduleVC: UIViewController, SheduleViewProtocol {
+class SheduleVC: UIViewController {
     let presenter: ShedulePresenterProtocol
+    
+    var currentProgramm:DailyProgram? {
+        didSet {
+            //TODO: Reload data
+        }
+    }
     
     init(presenter: ShedulePresenterProtocol) {
         self.presenter = presenter
@@ -22,6 +28,8 @@ class SheduleVC: UIViewController, SheduleViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        
+        self.presenter.updateProgramShedule()
     }
     
     fileprivate func setUI() {
@@ -29,9 +37,22 @@ class SheduleVC: UIViewController, SheduleViewProtocol {
     }
 }
 
-extension SheduleVC {
+extension SheduleVC:SheduleViewProtocol {
     func handle(_ output: ShedulePresenterOutputs) {
-        
+        switch output {
+        case .showData(let dailyProgramm):
+            self.currentProgramm = dailyProgramm
+        case .showError(let error):
+            self.error(text: error.localizedDescription)
+        }
     }
 }
+
+//TODO: temporaty stuff
+
+enum Section {
+  case main
+}
+
+typealias DataSource = UICollectionViewDiffableDataSource<Section, Channel>
 

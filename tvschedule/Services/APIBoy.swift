@@ -14,12 +14,12 @@ class APIBoy {
     
     private var headers: HTTPHeaders = ["Content-Type":"application/json"]
     
-    func getChannels() async -> [Channel]? {
-        return (try? await AF.request(Api.сhannelsUrl,method: .get, headers: self.headers).asyncDecodable(of: [Channel].self))
+    func getChannels() async throws -> [Channel] {
+        return (try await AF.request(Api.сhannelsUrl,method: .get, headers: self.headers).asyncDecodable(of: [Channel].self))
     }
     
-    func getProgramItems() async -> [ProgramItem]? {
-        return (try? await AF.request(Api.programItemsUrl,method: .get, headers: self.headers).asyncDecodable(of: [ProgramItem].self))
+    func getProgramItems() async throws -> [ProgramItem] {
+        return (try await AF.request(Api.programItemsUrl,method: .get, headers: self.headers).asyncDecodable(of: [ProgramItem].self))
     }
     
 }

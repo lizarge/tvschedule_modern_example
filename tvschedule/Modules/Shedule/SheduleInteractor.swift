@@ -6,5 +6,25 @@
 //
 
 final class SheduleInteractor: SheduleInteractorProtocol {
+    
+    let apiBoy:APIBoy!
+    
+    init(service:APIBoy) {
+        self.apiBoy = service
+    }
+    
     weak var delegate: SheduleInteractorDelegate!
+    
+    func fetchProgram() {
+        Task {
+            do {
+                let channels = try await apiBoy.getChannels()
+                let programItems = try await apiBoy.getProgramItems()
+                delegate.handle(.showData(channels, programItems))
+            } catch {
+                delegate.handle(.sendError(error))
+            }
+        }
+    }
+    
 }
