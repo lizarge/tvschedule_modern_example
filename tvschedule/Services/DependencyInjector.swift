@@ -25,7 +25,8 @@ final class DependencyInjector {
                 
         container.register(JSONDecoder.self) { resolver in
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = Api.dateFormatt
+            dateFormatter.dateFormat = Api.dateFormat
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             return decoder

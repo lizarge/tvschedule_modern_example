@@ -9,7 +9,7 @@ import Foundation
 
 struct Api {
     private static let base = "https://demo-c.cdn.vmedia.ca/json/"
-    public static let dateFormatt = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    public static let dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
     
     static var сhannelsUrl:String {
         return "\(base)/Channels"
@@ -21,6 +21,9 @@ struct Api {
 }
 
 struct UIDemoConstants { //this is approach for dem
-    static let sheduleWidth:CGFloat = 8000
-    static let shedulePeriod:CGFloat = sheduleWidth/24 * 2 //every half hour
+    static let sheduleWidth:CGFloat = 14400
+    static func calculateWidht(_ length:Float)-> CGFloat {
+        abs(CGFloat(length * 10) - 5)
+    }
+    static let cellHeight:CGFloat = 100
 }

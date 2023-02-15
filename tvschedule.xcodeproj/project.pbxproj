@@ -14,6 +14,7 @@
 		D9343C60299BAEEF00489ED1 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C5E299BAEEF00489ED1 /* HeaderCell.swift */; };
 		D9343C61299BAEEF00489ED1 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9343C5F299BAEEF00489ED1 /* HeaderCell.xib */; };
 		D9343C63299BD01300489ED1 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C62299BD01300489ED1 /* NSObject.swift */; };
+		D9343C66299D13EC00489ED1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C65299D13EC00489ED1 /* Date.swift */; };
 		D947331F299A524100B8D2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947331E299A524100B8D2CF /* AppDelegate.swift */; };
 		D9473326299A524100B8D2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9473325299A524100B8D2CF /* Assets.xcassets */; };
 		D9473329299A524100B8D2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9473327299A524100B8D2CF /* LaunchScreen.storyboard */; };
@@ -45,6 +46,7 @@
 		D9343C5E299BAEEF00489ED1 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		D9343C5F299BAEEF00489ED1 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		D9343C62299BD01300489ED1 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		D9343C65299D13EC00489ED1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		D947331B299A524100B8D2CF /* tvschedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvschedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D947331E299A524100B8D2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9473325299A524100B8D2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D9473355299A587000B8D2CF /* DataRequest.swift */,
+				D9343C65299D13EC00489ED1 /* Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -153,8 +156,8 @@
 				D9473383299ABD7D00B8D2CF /* DependencyInjector.swift */,
 				D9473350299A576500B8D2CF /* APIBoy.swift */,
 				D9473360299A5C4F00B8D2CF /* Constants.swift */,
-				D9343C64299BD69300489ED1 /* Extension */,
 				D947334D299A559500B8D2CF /* ApiModels */,
+				D9343C64299BD69300489ED1 /* Extension */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				D9473374299A7D7200B8D2CF /* SheduleInteractor.swift in Sources */,
 				D947335B299A5A1E00B8D2CF /* UIApplication.swift in Sources */,
 				D9343C63299BD01300489ED1 /* NSObject.swift in Sources */,
+				D9343C66299D13EC00489ED1 /* Date.swift in Sources */,
 				D9343C60299BAEEF00489ED1 /* HeaderCell.swift in Sources */,
 				D9473373299A7D7200B8D2CF /* SheduleContracts.swift in Sources */,
 				D9473361299A5C4F00B8D2CF /* Constants.swift in Sources */,

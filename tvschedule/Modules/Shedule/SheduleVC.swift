@@ -12,12 +12,11 @@ class SheduleVC: UIViewController {
     //MARK: VIPER
     let presenter: ShedulePresenterProtocol
     
-    //MARK: Xib UI
+    //MARK: UI
     var collectionView: UICollectionView!
     var scrollView: UIScrollView!
-    //MARK: Data
-    @IBOutlet weak var collectionViewWidthContrains: NSLayoutConstraint!
     
+    //MARK: Data
     private var currentProgramm:DailyProgram?
     typealias DataSource = UICollectionViewDiffableDataSource<DailyProgram.Section, ProgramItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<DailyProgram.Section, ProgramItem>
@@ -25,7 +24,6 @@ class SheduleVC: UIViewController {
     private lazy var dataSource = makeDataSource()
     
     //MARK: VC lifecycle
-    
     init(presenter: ShedulePresenterProtocol) {
         self.presenter = presenter
         super.init(nibName: SheduleVC.stringClassID, bundle: nil)
@@ -42,7 +40,6 @@ class SheduleVC: UIViewController {
     }
     
     fileprivate func setUI() {
-        
         self.scrollView = UIScrollView()
         self.view.addSubview(self.scrollView)
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +50,7 @@ class SheduleVC: UIViewController {
             self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
       
-        let extendedFrame = CGRect(x: 0, y: 0, width: UIDemoConstants.sheduleWidth , height: self.view.frame.height)
+        let extendedFrame = CGRect(x: 0, y: 0, width: UIDemoConstants.sheduleWidth * 2 , height: self.view.frame.height)
         self.collectionView = UICollectionView(frame: extendedFrame, collectionViewLayout: UICollectionViewFlowLayout())
         self.collectionView.delegate = self
         self.scrollView.addSubview(self.collectionView)
@@ -111,17 +108,23 @@ extension SheduleVC:SheduleViewProtocol {
     }
 }
 
-
 extension SheduleVC: UICollectionViewDelegateFlowLayout{
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      return CGSize(width: 300, height: 100)
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return 0.0
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    return 0.0
-  }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if let video = dataSource.itemIdentifier(for: indexPath)  {
+            return CGSize(width: UIDemoConstants.calculateWidht(video.length) , height: UIDemoConstants.cellHeight)
+        }
+        return CGSize()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 5
+    }
+
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
 }
+
+

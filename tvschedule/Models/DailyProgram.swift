@@ -29,20 +29,19 @@ class DailyProgram {
             tempStorage[channel.id] = [ProgramItem]()
         }
     
-        //MARK: look like no need sort at time, but need to check it
         var tempSheduleStartTime = Date()
-        var tempSheduleEndTime = Date()
+        var tempSheduleEndTime = Date(timeIntervalSince1970: 0)
         
         items.forEach { item in
             
-            //This is bad solution, in real application we can got this timeframe in request, but for demo its ok
+            //MARK: This is bad solution, in real application we can got this timeframe in request, but for demo its ok
             if tempSheduleStartTime > item.startTime {
                 tempSheduleStartTime = item.startTime
             }
-            if tempSheduleEndTime < item.startTime {
-                tempSheduleEndTime = item.startTime
+            if tempSheduleEndTime < item.endTime {
+                tempSheduleEndTime = item.endTime
             }
-            //^demo only!
+            //MARK: demo only!
             
             tempStorage[item.recentAirTime.channelID]?.append(item)
         }
@@ -64,9 +63,16 @@ class DailyProgram {
         var items = [ProgramItem]()
         
         switch section {
-            case .main(let channel):
-                items = self.storage[channel.id] ?? []
+        case .main(let channel):
+            items = self.storage[channel.id] ?? []
         }
+        
+        guard items.count > 0 else {
+            return []
+        }
+                
+        items.insert(items.first!.spacer(to: sheduleStartTime), at: 0)
+        items.append(items.last!.spacer(to: sheduleEndTime))
         
         return items
     }
@@ -81,3 +87,4 @@ class DailyProgram {
     }
 
 }
+
