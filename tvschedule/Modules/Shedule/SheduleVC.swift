@@ -18,8 +18,8 @@ class SheduleVC: UIViewController {
     
     //MARK: Data
     private var currentProgramm:DailyProgram?
-    typealias DataSource = UICollectionViewDiffableDataSource<DailyProgram.Section, ProgramItem>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<DailyProgram.Section, ProgramItem>
+    typealias DataSource = UICollectionViewDiffableDataSource<DailyProgram.Section, DailyProgram.Item>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<DailyProgram.Section, DailyProgram.Item>
     
     private lazy var dataSource = makeDataSource()
     
@@ -67,16 +67,32 @@ class SheduleVC: UIViewController {
     func makeDataSource() -> DataSource {
         let dataSource = DataSource(
         collectionView: collectionView,
-        cellProvider: { (collectionView, indexPath, programItem) ->
+        cellProvider: { (collectionView, indexPath, item) ->
           UICollectionViewCell? in
-
-          let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: ProgramCell.stringClassID,
-            for: indexPath) as? ProgramCell
-          
-            cell?.setup(program: programItem)
             
-          return cell
+            switch item {
+            case .program(let programItem):
+                let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ProgramCell.stringClassID,
+                for: indexPath) as? ProgramCell
+                
+                cell?.setup(program: programItem)
+                return cell
+            case .header(let value):
+                let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: HeaderCell.stringClassID,
+                for: indexPath) as? HeaderCell
+                
+                cell?.setup(headerTime: value)
+                return cell
+            case .channel(let channel):
+                let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ChannelCell.stringClassID,
+                for: indexPath) as? ChannelCell
+                
+                cell?.setup(channel: channel)
+                return cell
+            }
         })
         
         return dataSource
@@ -110,21 +126,26 @@ extension SheduleVC:SheduleViewProtocol {
 
 extension SheduleVC: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if let video = dataSource.itemIdentifier(for: indexPath)  {
-            return CGSize(width: UIDemoConstants.calculateWidht(video.length) , height: UIDemoConstants.cellHeight)
+        if let item = dataSource.itemIdentifier(for: indexPath)  {
+            switch item {
+            case .program(let programItem):
+                return CGSize(width: UIDemoConstants.cellWidht(programItem.length) , height: UIDemoConstants.cellHeight)
+            case .header(_):
+                return CGSize(width: UIDemoConstants.cellWidht(UIDemoConstants.sheduleIntervalMinute) , height: UIDemoConstants.cellHeight)
+            case .channel(_):
+                return CGSize(width: UIDemoConstants.cellWidht(UIDemoConstants.sheduleIntervalMinute) , height: UIDemoConstants.cellHeight)
+            }
         }
         return CGSize()
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
         return 5
     }
 
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
 }
 
 

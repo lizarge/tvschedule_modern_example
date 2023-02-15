@@ -36,13 +36,15 @@ final class DependencyInjector {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .none
             dateFormatter.timeStyle = .short
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
             return dateFormatter
         }
         
         container.register(DateFormatter.self,name: DateFormatterStyles.fullToday.rawValue) { resolver in
             let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .none
-            dateFormatter.timeStyle = .short
+            dateFormatter.dateStyle = .short
+            dateFormatter.timeStyle = .none
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
             return dateFormatter
         }
     }

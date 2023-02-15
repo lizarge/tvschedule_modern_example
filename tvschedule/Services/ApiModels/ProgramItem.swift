@@ -41,8 +41,14 @@ extension ProgramItem {
     
     func spacer(to:Date)->ProgramItem {
         
+       
+        
         let startTime = (self.startTime > to) ? to : self.endTime
-        let length = (self.startTime > to) ? Float(self.startTime.minutesDifference(end: to)) : Float(self.endTime.minutesDifference(end: to))
+        var length = (self.startTime > to) ? Float(self.startTime.minutesDifference(end: to)) : Float(self.endTime.minutesDifference(end: to))
+        
+        if self.startTime == to {
+            length = 0
+        }
         
         return ProgramItem(startTime: startTime,
                     recentAirTime: ProgramItem.RecentAirTime(id: -self.recentAirTime.id, channelID: self.recentAirTime.channelID),

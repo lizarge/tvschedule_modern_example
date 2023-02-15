@@ -24,7 +24,6 @@ class DailyProgram {
         })
         
         var tempStorage = [Int:[ProgramItem]]()
-        
         channels.forEach { channel in
             tempStorage[channel.id] = [ProgramItem]()
         }
@@ -41,49 +40,83 @@ class DailyProgram {
             if tempSheduleEndTime < item.endTime {
                 tempSheduleEndTime = item.endTime
             }
-            //MARK: demo only!
+            //MARK: ^demo only!
             
             tempStorage[item.recentAirTime.channelID]?.append(item)
         }
         
         sheduleStartTime = tempSheduleStartTime
         sheduleEndTime = tempSheduleEndTime
-        
         storage = tempStorage
     }
     
-    func sections()->[DailyProgram.Section] {
-        return self.sortedChannels.map { channel in
-            return DailyProgram.Section.main(channel)
-        }
-    }
-    
-    func items(section:Section)->[ProgramItem]{
+    private func generateHeaderItems(low:Date, hight:Date, inteval:TimeInterval = UIDemoConstants.sheduleInterval ) -> [Item] {
+        var items = [ Item.header(HeaderTimeShedule(date: low, isFull: true)) ]
         
-        var items = [ProgramItem]()
-        
-        switch section {
-        case .main(let channel):
-            items = self.storage[channel.id] ?? []
+        var dateBuffer = low
+        while dateBuffer < hight {
+            items.append(Item.header( HeaderTimeShedule(date: dateBuffer, isFull: false) ))
+            dateBuffer = dateBuffer.addingTimeInterval(inteval)
         }
-        
-        guard items.count > 0 else {
-            return []
-        }
-                
-        items.insert(items.first!.spacer(to: sheduleStartTime), at: 0)
-        items.append(items.last!.spacer(to: sheduleEndTime))
         
         return items
     }
     
-    struct HeaderTimeShedule {
+    func sections()->[DailyProgram.Section] {
+        var sections = [DailyProgram.Section.header]
+        sections.append(contentsOf:
+            self.sortedChannels.map { channel in
+                return DailyProgram.Section.main(channel)
+            }
+        )
+        return sections
+    }
+    
+    func items(section:Section)->[Item]{
+        
+        var items = [ProgramItem]()
+        
+        switch section {
+        case .header:
+            return self.generateHeaderItems(low: sheduleStartTime, hight: sheduleEndTime)
+            
+        case .main(let channel):
+            items = self.storage[channel.id] ?? []
+            guard items.count > 0 else {
+                return []
+            }
+            items.insert(items.first!.spacer(to: sheduleStartTime), at: 0)
+            items.append(items.last!.spacer(to: sheduleEndTime))
+            
+            var items = items.map{Item.program($0)}
+            items.insert(Item.channel(channel), at: 0)
+            
+            return items
+        }
+    }
+    
+    struct HeaderTimeShedule:Equatable, Hashable {
         let date:Date
         let isFull:Bool
+        
+        static func == (lhs: HeaderTimeShedule, rhs: HeaderTimeShedule) -> Bool {
+            lhs.date == rhs.date && lhs.isFull == rhs.isFull
+        }
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(self.date)
+        }
     }
     
     enum Section:Hashable {
+      case header
       case main(Channel)
+    }
+    
+    enum Item:Hashable {
+      case channel(Channel)
+      case header(HeaderTimeShedule)
+      case program(ProgramItem)
     }
 
 }

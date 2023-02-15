@@ -22,8 +22,12 @@ struct Api {
 
 struct UIDemoConstants { //this is approach for dem
     static let sheduleWidth:CGFloat = 14400
-    static func calculateWidht(_ length:Float)-> CGFloat {
+    
+    static func cellWidht(_ length:Float)-> CGFloat {
         abs(CGFloat(length * 10) - 5)
     }
     static let cellHeight:CGFloat = 100
+    
+    static let sheduleIntervalMinute:Float = 30
+    static let sheduleInterval:TimeInterval = TimeInterval(60 * sheduleIntervalMinute) // half hour
 }
