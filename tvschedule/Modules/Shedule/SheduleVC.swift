@@ -146,18 +146,6 @@ extension SheduleVC: UICollectionViewDelegateFlowLayout{
         return CGSize()
     }
 
-    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        if let item = dataSource.itemIdentifier(for: indexPath)  {
-            switch item {
-            case .program(_):
-                return true
-            default:
-                return false
-            }
-        }
-        return false
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
         return UIDemoConstants.cellSpacer
@@ -168,9 +156,22 @@ extension SheduleVC: UICollectionViewDelegateFlowLayout{
     }
     
     //This is for TVOS scrolling
+    
+    func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
+        if let item = dataSource.itemIdentifier(for: indexPath)  {
+            switch item {
+            case .program(_), .channel(_):
+                return true
+            default:
+                return false
+            }
+        }
+        return false
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        (context.previouslyFocusedView as? ProgramCell)?.isSelected = false
-        (context.nextFocusedView as? ProgramCell)?.isSelected = true
+        (context.previouslyFocusedView as? TVFocusCellProtocol)?.isSelected = false
+        (context.nextFocusedView as? TVFocusCellProtocol)?.isSelected = true
     }
 }
 
