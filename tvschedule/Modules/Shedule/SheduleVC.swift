@@ -116,7 +116,6 @@ class SheduleVC: UIViewController, SheduleViewProtocol {
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     
-    
     //MARK: Viper stuff
     func handle(_ output: ShedulePresenterOutputs) {
         switch output {
@@ -148,7 +147,6 @@ extension SheduleVC: UICollectionViewDelegateFlowLayout{
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
         return UIDemoConstants.cellSpacer
     }
     
@@ -156,8 +154,7 @@ extension SheduleVC: UICollectionViewDelegateFlowLayout{
            return UIEdgeInsets(top: UIDemoConstants.cellSpacer, left: 0, bottom: 0, right: 0)
     }
     
-    //This is for TVOS scrolling
-    
+    //MARK: TVOS scrolling
     func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
         if let item = dataSource.itemIdentifier(for: indexPath)  {
             switch item {

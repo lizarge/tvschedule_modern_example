@@ -17,7 +17,7 @@ final class SheduleInteractor: SheduleInteractorProtocol {
     weak var delegate: SheduleInteractorDelegate!
     
     func loadProgram(date:Date) {
-        dataManager.sheduleFor(date: date) { program, error in
+        dataManager.sheduleFor(date: date) { program, error in // in real life, in this section we need to add some data transformation, 
             if let program = program {
                 self.delegate.handle(.showData(program))
             } else {

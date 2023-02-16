@@ -21,6 +21,8 @@ struct ProgramItem:Codable {
     let length:Float
 }
 
+//Add some sugar
+
 extension ProgramItem: Hashable, Equatable {
     var endTime:Date {
         return self.startTime + (Double(self.length) * 60)

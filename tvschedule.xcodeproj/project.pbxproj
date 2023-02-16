@@ -88,7 +88,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D9343C55299BAE2800489ED1 /* Cells */ = {
+		D9343C55299BAE2800489ED1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				D9343C56299BAE5000489ED1 /* ChannelCell.swift */,
@@ -99,7 +99,7 @@
 				D9343C5F299BAEEF00489ED1 /* HeaderCell.xib */,
 				D9343C6B299E5CE700489ED1 /* TVFocusCellProtocol.swift */,
 			);
-			path = Cells;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		D9343C64299BD69300489ED1 /* Extension */ = {
@@ -114,6 +114,7 @@
 		D9343C6F299E7D5200489ED1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D947334D299A559500B8D2CF /* Enity */,
 				D9343C6D299E7A8100489ED1 /* DataManager.swift */,
 				D9473350299A576500B8D2CF /* RestService.swift */,
 				D9343C70299E7D7700489ED1 /* DataContracts.swift */,
@@ -173,19 +174,18 @@
 				D9343C6F299E7D5200489ED1 /* Data */,
 				D9473383299ABD7D00B8D2CF /* DependencyInjector.swift */,
 				D9473360299A5C4F00B8D2CF /* Constants.swift */,
-				D947334D299A559500B8D2CF /* ApiModels */,
 				D9343C64299BD69300489ED1 /* Extension */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		D947334D299A559500B8D2CF /* ApiModels */ = {
+		D947334D299A559500B8D2CF /* Enity */ = {
 			isa = PBXGroup;
 			children = (
 				D947334E299A55EF00B8D2CF /* Channel.swift */,
 				D947335C299A5B9B00B8D2CF /* ProgramItem.swift */,
 			);
-			path = ApiModels;
+			path = Enity;
 			sourceTree = "<group>";
 		};
 		D9473357299A593A00B8D2CF /* Extensions */ = {
@@ -210,7 +210,7 @@
 		D9473377299A7D7700B8D2CF /* Shedule */ = {
 			isa = PBXGroup;
 			children = (
-				D9343C55299BAE2800489ED1 /* Cells */,
+				D9343C55299BAE2800489ED1 /* UI */,
 				D947336B299A7D7200B8D2CF /* ShedulePresenter.swift */,
 				D947336C299A7D7200B8D2CF /* SheduleRouter.swift */,
 				D947336D299A7D7200B8D2CF /* SheduleContracts.swift */,
