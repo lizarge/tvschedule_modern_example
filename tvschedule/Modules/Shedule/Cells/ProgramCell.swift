@@ -41,9 +41,11 @@ class ProgramCell: UICollectionViewCell, TVFocusCellProtocol {
                     self.programNameLabel.text = "\(time)\n\(name)"
                 }
                 self.backgroundColor = isActive ? #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1) : #colorLiteral(red: 0.1975131035, green: 0.5311717987, blue: 0.7726793885, alpha: 1)
+                self.programNameLabel.numberOfLines = 2
             } else {
                 self.programNameLabel.text = name
                 self.backgroundColor = isActive ? #colorLiteral(red: 0.06169543415, green: 0.1378391385, blue: 0.1920129061, alpha: 1) : #colorLiteral(red: 0.1543964744, green: 0.3696995378, blue: 0.5223004818, alpha: 1)
+                self.programNameLabel.numberOfLines = 1
             }
         }
     }

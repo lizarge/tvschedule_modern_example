@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class APIBoy {
+class APIService {
     
     //TODO: Cache?
     

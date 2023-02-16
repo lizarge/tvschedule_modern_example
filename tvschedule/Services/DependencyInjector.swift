@@ -24,8 +24,8 @@ final class DependencyInjector {
     }
     
     private static func setupGeneral(){
-        container.register(APIBoy.self) { resolver in
-            return APIBoy()
+        container.register(APIService.self) { resolver in
+            return APIService()
         }
                 
         container.register(JSONDecoder.self) { resolver in
@@ -56,7 +56,7 @@ final class DependencyInjector {
     
     private static func setupViews(){
         container.register(SheduleVC.self) { resolver in
-            return ShedulePageBuilder.make(apiService: resolver.resolve(APIBoy.self)! )
+            return ShedulePageBuilder.make(apiService: resolver.resolve(APIService.self)! )
         }
     }
 

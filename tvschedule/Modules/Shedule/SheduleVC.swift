@@ -41,6 +41,7 @@ class SheduleVC: UIViewController, SheduleViewProtocol {
         self.presenter.updateProgramShedule()
     }
     
+    //This is for demo UI only
     private func setUI() {
         self.scrollView = UIScrollView()
         self.view.addSubview(self.scrollView)

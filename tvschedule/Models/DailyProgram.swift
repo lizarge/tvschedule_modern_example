@@ -115,6 +115,4 @@ class DailyProgram {
       case header(HeaderTimeShedule)
       case program(ProgramItem)
     }
-
 }
-

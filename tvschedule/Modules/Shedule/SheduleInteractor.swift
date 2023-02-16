@@ -7,9 +7,9 @@
 
 final class SheduleInteractor: SheduleInteractorProtocol {
     
-    let apiBoy:APIBoy!
+    let apiBoy:APIService!
     
-    init(service:APIBoy) {
+    init(service:APIService) {
         self.apiBoy = service
     }
     
