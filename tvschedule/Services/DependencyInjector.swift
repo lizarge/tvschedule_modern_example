@@ -24,10 +24,11 @@ final class DependencyInjector {
     }
     
     private static func setupGeneral(){
-        container.register(APIService.self) { resolver in
-            return APIService()
+        
+        container.register(DataManager.self) { resolver in
+            return DataManager()
         }
-                
+        
         container.register(JSONDecoder.self) { resolver in
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = Api.dateFormat
@@ -56,7 +57,7 @@ final class DependencyInjector {
     
     private static func setupViews(){
         container.register(SheduleVC.self) { resolver in
-            return ShedulePageBuilder.make(apiService: resolver.resolve(APIService.self)! )
+            return ShedulePageBuilder.make(dataManager: resolver.resolve(DataManager.self)! )
         }
     }
 

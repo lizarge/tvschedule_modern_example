@@ -4,27 +4,25 @@
 //
 //  Created by ankudinov aleksandr on 13.02.2023.
 //
+import Foundation
 
 final class SheduleInteractor: SheduleInteractorProtocol {
     
-    let apiBoy:APIService!
+    let dataManager:DataManager!
     
-    init(service:APIService) {
-        self.apiBoy = service
+    init(service:DataManager) {
+        self.dataManager = service
     }
     
     weak var delegate: SheduleInteractorDelegate!
     
-    func fetchProgram() {
-        Task {
-            do {
-                let channels = try await apiBoy.getChannels()
-                let programItems = try await apiBoy.getProgramItems()
-                delegate.handle(.showData(channels, programItems))
-            } catch {
-                delegate.handle(.sendError(error))
+    func loadProgram(date:Date) {
+        dataManager.sheduleFor(date: date) { program, error in
+            if let program = program {
+                self.delegate.handle(.showData(program))
+            } else {
+                self.delegate.handle(.sendError(error))
             }
         }
     }
-    
 }

@@ -36,4 +36,6 @@ struct UIDemoConstants { //this is approach for demo
     static let sheduleInterval:TimeInterval = TimeInterval(60 * sheduleIntervalMinute) // half hour
     
     static let backgroundColor = #colorLiteral(red: 0.2218184769, green: 0.4278398752, blue: 0.6166955233, alpha: 1)
+    
+    static let mockSheduleDate = Date() //Does matter, mock api not allowe set data to request
 }

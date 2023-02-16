@@ -8,9 +8,9 @@
 import UIKit
 
 struct ShedulePageBuilder {
-    static func make(apiService:APIService) -> SheduleVC {
+    static func make(dataManager:DataManager) -> SheduleVC {
         let router = SheduleRouter()
-        let interactor = SheduleInteractor(service: apiService)
+        let interactor = SheduleInteractor(service: dataManager)
         let presenter = ShedulePresenter(router,interactor)
         let destinationVC = SheduleVC(presenter: presenter)
         

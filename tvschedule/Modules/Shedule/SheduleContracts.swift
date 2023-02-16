@@ -5,9 +5,11 @@
 //  Created by ankudinov aleksandr on 13.02.2023.
 //
 
+import Foundation
+
 //PRESENTER
 protocol ShedulePresenterProtocol: AnyObject  {
-    func updateProgramShedule()
+    func loadProgramShedule(date:Date)
 }
 
 enum ShedulePresenterOutputs {
@@ -19,7 +21,7 @@ enum ShedulePresenterOutputs {
 //INTERACTOR
 protocol SheduleInteractorProtocol: AnyObject  {
     var delegate: SheduleInteractorDelegate! {get set}
-    func fetchProgram()
+    func loadProgram(date: Date)
 }
 
 protocol SheduleInteractorDelegate: AnyObject  {
@@ -27,8 +29,8 @@ protocol SheduleInteractorDelegate: AnyObject  {
 }
 
 enum SheduleInteractorOutputs {
-    case sendError(Error)
-    case showData([Channel],[ProgramItem])
+    case sendError(Error?)
+    case showData(DailyProgram)
 }
 
 /*------------------------*/

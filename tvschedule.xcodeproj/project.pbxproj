@@ -17,11 +17,13 @@
 		D9343C66299D13EC00489ED1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C65299D13EC00489ED1 /* Date.swift */; };
 		D9343C68299E3E2300489ED1 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C67299E3E2300489ED1 /* Array.swift */; };
 		D9343C6C299E5CE700489ED1 /* TVFocusCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C6B299E5CE700489ED1 /* TVFocusCellProtocol.swift */; };
+		D9343C6E299E7A8100489ED1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C6D299E7A8100489ED1 /* DataManager.swift */; };
+		D9343C71299E7D7700489ED1 /* DataContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9343C70299E7D7700489ED1 /* DataContracts.swift */; };
 		D947331F299A524100B8D2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947331E299A524100B8D2CF /* AppDelegate.swift */; };
 		D9473326299A524100B8D2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9473325299A524100B8D2CF /* Assets.xcassets */; };
 		D9473329299A524100B8D2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9473327299A524100B8D2CF /* LaunchScreen.storyboard */; };
 		D947334F299A55EF00B8D2CF /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947334E299A55EF00B8D2CF /* Channel.swift */; };
-		D9473351299A576500B8D2CF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473350299A576500B8D2CF /* APIService.swift */; };
+		D9473351299A576500B8D2CF /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473350299A576500B8D2CF /* RestService.swift */; };
 		D9473354299A57B700B8D2CF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D9473353299A57B700B8D2CF /* Alamofire */; };
 		D9473356299A587000B8D2CF /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9473355299A587000B8D2CF /* DataRequest.swift */; };
 		D947335B299A5A1E00B8D2CF /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947335A299A5A1E00B8D2CF /* UIApplication.swift */; };
@@ -50,12 +52,14 @@
 		D9343C65299D13EC00489ED1 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		D9343C67299E3E2300489ED1 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		D9343C6B299E5CE700489ED1 /* TVFocusCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVFocusCellProtocol.swift; sourceTree = "<group>"; };
+		D9343C6D299E7A8100489ED1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D9343C70299E7D7700489ED1 /* DataContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContracts.swift; sourceTree = "<group>"; };
 		D947331B299A524100B8D2CF /* tvschedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvschedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D947331E299A524100B8D2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9473325299A524100B8D2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9473328299A524100B8D2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D947334E299A55EF00B8D2CF /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
-		D9473350299A576500B8D2CF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		D9473350299A576500B8D2CF /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
 		D9473355299A587000B8D2CF /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		D947335A299A5A1E00B8D2CF /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		D947335C299A5B9B00B8D2CF /* ProgramItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramItem.swift; sourceTree = "<group>"; };
@@ -107,6 +111,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		D9343C6F299E7D5200489ED1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D9343C6D299E7A8100489ED1 /* DataManager.swift */,
+				D9473350299A576500B8D2CF /* RestService.swift */,
+				D9343C70299E7D7700489ED1 /* DataContracts.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		D9473312299A524100B8D2CF = {
 			isa = PBXGroup;
 			children = (
@@ -156,8 +170,8 @@
 		D947334C299A557C00B8D2CF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D9343C6F299E7D5200489ED1 /* Data */,
 				D9473383299ABD7D00B8D2CF /* DependencyInjector.swift */,
-				D9473350299A576500B8D2CF /* APIService.swift */,
 				D9473360299A5C4F00B8D2CF /* Constants.swift */,
 				D947334D299A559500B8D2CF /* ApiModels */,
 				D9343C64299BD69300489ED1 /* Extension */,
@@ -297,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9473389299AE16B00B8D2CF /* DailyProgram.swift in Sources */,
+				D9343C6E299E7A8100489ED1 /* DataManager.swift in Sources */,
 				D9343C58299BAE5000489ED1 /* ChannelCell.swift in Sources */,
 				D9473376299A7D7200B8D2CF /* ShedulePageBuilder.swift in Sources */,
 				D9473372299A7D7200B8D2CF /* SheduleRouter.swift in Sources */,
@@ -308,7 +323,7 @@
 				D9343C5C299BAEDB00489ED1 /* ProgramCell.swift in Sources */,
 				D9473375299A7D7200B8D2CF /* SheduleVC.swift in Sources */,
 				D9473384299ABD7D00B8D2CF /* DependencyInjector.swift in Sources */,
-				D9473351299A576500B8D2CF /* APIService.swift in Sources */,
+				D9473351299A576500B8D2CF /* RestService.swift in Sources */,
 				D9473374299A7D7200B8D2CF /* SheduleInteractor.swift in Sources */,
 				D947335B299A5A1E00B8D2CF /* UIApplication.swift in Sources */,
 				D9343C63299BD01300489ED1 /* NSObject.swift in Sources */,
@@ -316,6 +331,7 @@
 				D9343C68299E3E2300489ED1 /* Array.swift in Sources */,
 				D9343C60299BAEEF00489ED1 /* HeaderCell.swift in Sources */,
 				D9473373299A7D7200B8D2CF /* SheduleContracts.swift in Sources */,
+				D9343C71299E7D7700489ED1 /* DataContracts.swift in Sources */,
 				D9473361299A5C4F00B8D2CF /* Constants.swift in Sources */,
 				D947331F299A524100B8D2CF /* AppDelegate.swift in Sources */,
 				D9343C6C299E5CE700489ED1 /* TVFocusCellProtocol.swift in Sources */,

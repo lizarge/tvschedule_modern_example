@@ -38,7 +38,7 @@ class SheduleVC: UIViewController, SheduleViewProtocol {
         super.viewDidLoad()
         setUI()
         
-        self.presenter.updateProgramShedule()
+        self.presenter.loadProgramShedule(date: UIDemoConstants.mockSheduleDate)
     }
     
     //This is for demo UI only
