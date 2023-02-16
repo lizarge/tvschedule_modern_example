@@ -82,29 +82,26 @@ class DailyProgram {
             
         case .main(let channel):
             items = self.storage[channel.id] ?? []
-            guard items.count > 0 else {
-                return []
-            }
-            items.insert(items.first!.spacer(to: sheduleStartTime), at: 0)
-            items.append(items.last!.spacer(to: sheduleEndTime))
+           
+            items.appendFirst(items.first?.spacer(to: sheduleStartTime))
+            items.appendLast(items.last?.spacer(to: sheduleEndTime))
             
             var items = items.map{Item.program($0)}
-            items.insert(Item.channel(channel), at: 0)
+            items.appendFirst(Item.channel(channel))
             
             return items
         }
     }
     
     struct HeaderTimeShedule:Equatable, Hashable {
+        let id:Int
         let date:Date
         let isFull:Bool
         
-        static func == (lhs: HeaderTimeShedule, rhs: HeaderTimeShedule) -> Bool {
-            lhs.date == rhs.date && lhs.isFull == rhs.isFull
-        }
-        
-        func hash(into hasher: inout Hasher) {
-            hasher.combine(self.date)
+        init(date: Date, isFull: Bool) {
+            self.id = date.hashValue
+            self.date = date
+            self.isFull = isFull
         }
     }
     

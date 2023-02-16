@@ -24,11 +24,9 @@ final class ShedulePresenter: ShedulePresenterProtocol {
 }
 
 extension ShedulePresenter: SheduleInteractorDelegate {
-    
-    //TODO: look i need move data logic from Presenter to hmmm
-    
+
+    //Presenter just prepare data for display withour any big deal logic
     func handle(_ output: SheduleInteractorOutputs) {
-        
         switch output {
         case .showData(let channels, let programItems):
             self.view?.handle(.showData( DailyProgram(channels: channels, items: programItems) ))

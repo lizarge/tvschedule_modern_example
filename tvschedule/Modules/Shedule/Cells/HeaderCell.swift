@@ -19,6 +19,6 @@ class HeaderCell: UICollectionViewCell {
     }()
     
     func setup(headerTime:DailyProgram.HeaderTimeShedule) {
-        headerTimeLabel.text = headerTime.isFull ? dateFormatter.string(from: headerTime.date) : timeFormatterShort.string(from: headerTime.date)
+        headerTimeLabel.text = headerTime.isFull ? "Today,\n\(dateFormatter.string(from: headerTime.date))" : timeFormatterShort.string(from: headerTime.date)
     }
 }

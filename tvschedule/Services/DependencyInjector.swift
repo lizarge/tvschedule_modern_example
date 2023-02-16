@@ -10,11 +10,16 @@ import Swinject
 import UIKit
 
 final class DependencyInjector {
+    
+    enum DateFormatterStyles:String {
+        case time
+        case fullToday
+    }
+    
     static public let container = Container()
     
     static func BuldDependecy() {
         setupGeneral()
-        
         setupViews()
     }
     
@@ -54,9 +59,5 @@ final class DependencyInjector {
             return ShedulePageBuilder.make(apiService: resolver.resolve(APIBoy.self)! )
         }
     }
-    
-    enum DateFormatterStyles:String {
-        case time
-        case fullToday
-    }
+
 }

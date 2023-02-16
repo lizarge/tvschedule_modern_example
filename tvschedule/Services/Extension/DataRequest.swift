@@ -32,7 +32,6 @@ public extension DataRequest {
                 case .failure(let error):
                     if let data = response.data, let text = String(data: data, encoding: .utf8) {
                         //MARK: Just log
-                        print("API PROBLEM:\n" + text)
                         print(error.localizedDescription)
                     }
                     continuation.resume(throwing: error)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SheduleVC: UIViewController {
+class SheduleVC: UIViewController, SheduleViewProtocol {
     
     //MARK: VIPER
     let presenter: ShedulePresenterProtocol
@@ -18,6 +18,7 @@ class SheduleVC: UIViewController {
     
     //MARK: Data
     private var currentProgramm:DailyProgram?
+    
     typealias DataSource = UICollectionViewDiffableDataSource<DailyProgram.Section, DailyProgram.Item>
     typealias Snapshot = NSDiffableDataSourceSnapshot<DailyProgram.Section, DailyProgram.Item>
     
@@ -26,7 +27,7 @@ class SheduleVC: UIViewController {
     //MARK: VC lifecycle
     init(presenter: ShedulePresenterProtocol) {
         self.presenter = presenter
-        super.init(nibName: SheduleVC.stringClassID, bundle: nil)
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -36,10 +37,11 @@ class SheduleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        
         self.presenter.updateProgramShedule()
     }
     
-    fileprivate func setUI() {
+    private func setUI() {
         self.scrollView = UIScrollView()
         self.view.addSubview(self.scrollView)
         self.scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -49,21 +51,24 @@ class SheduleVC: UIViewController {
             self.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
-      
-        let extendedFrame = CGRect(x: 0, y: 0, width: UIDemoConstants.sheduleWidth * 2 , height: self.view.frame.height)
+        
+        let extendedFrame = CGRect(x: 0, y: 0, width: UIDemoConstants.sheduleWidth * UIDemoConstants.zoom , height: view.frame.height)
+       
         self.collectionView = UICollectionView(frame: extendedFrame, collectionViewLayout: UICollectionViewFlowLayout())
         self.collectionView.delegate = self
+        
         self.scrollView.addSubview(self.collectionView)
         self.scrollView.contentSize = extendedFrame.size
         
+        self.scrollView.backgroundColor = UIDemoConstants.backgroundColor
+        self.collectionView.backgroundColor = UIDemoConstants.backgroundColor
+        
         [ChannelCell.self, HeaderCell.self, ProgramCell.self].forEach { type in
-            self.collectionView.register(
-                UINib(nibName: type.stringClassID, bundle: .main), forCellWithReuseIdentifier: type.stringClassID)
+            self.collectionView.register(  UINib(nibName: type.stringClassID, bundle: .main), forCellWithReuseIdentifier: type.stringClassID )
         }
     }
     
     //MARK: collection diffable data source
-    //TODO: move this to spectial class
     func makeDataSource() -> DataSource {
         let dataSource = DataSource(
         collectionView: collectionView,
@@ -110,9 +115,8 @@ class SheduleVC: UIViewController {
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
     
-}
-
-extension SheduleVC:SheduleViewProtocol {
+    
+    //MARK: Viper stuff
     func handle(_ output: ShedulePresenterOutputs) {
         switch output {
         case .showData(let dailyProgramm):
@@ -124,7 +128,10 @@ extension SheduleVC:SheduleViewProtocol {
     }
 }
 
+//MARK: Collection view delegate
+
 extension SheduleVC: UICollectionViewDelegateFlowLayout{
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let item = dataSource.itemIdentifier(for: indexPath)  {
             switch item {
@@ -139,12 +146,31 @@ extension SheduleVC: UICollectionViewDelegateFlowLayout{
         return CGSize()
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
-    }
-
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+        if let item = dataSource.itemIdentifier(for: indexPath)  {
+            switch item {
+            case .program(_):
+                return true
+            default:
+                return false
+            }
+        }
+        return false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return UIDemoConstants.cellSpacer
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+           return UIEdgeInsets(top: UIDemoConstants.cellSpacer, left: 0, bottom: 0, right: 0)
+    }
+    
+    //This is for TVOS scrolling
+    func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        (context.previouslyFocusedView as? ProgramCell)?.isSelected = false
+        (context.nextFocusedView as? ProgramCell)?.isSelected = true
     }
 }
 

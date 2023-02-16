@@ -19,5 +19,3 @@ struct ShedulePageBuilder {
         return destinationVC
     }
 }
-
-
